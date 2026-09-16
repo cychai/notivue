@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Notivue",
+  "version": "0.1.10",
+  "minimum_chrome_version": "116",
+  "description": "Turn videos into bilingual transcripts, chapters, explanations, and timestamped notes.",
+  "permissions": ["sidePanel", "storage", "tabs", "downloads", "scripting"],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "optional_host_permissions": ["https://*/*"],
+  "action": {
+    "default_title": "打开 Notivue",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/page-bridge.js"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}

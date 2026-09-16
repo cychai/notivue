@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notivue</title>
+    <link rel="stylesheet" href="src/sidepanel.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Notivue 首页">
+        <img class="brand-mark" src="assets/icons/icon48.png" alt="">
+        <span><strong>Notivue</strong><small>视频学习助手</small></span>
+      </a>
+      <div class="top-actions">
+        <button id="exportBtn" class="icon-btn" title="导出 Markdown" aria-label="导出 Markdown">↓</button>
+        <button id="settingsBtn" class="icon-btn" title="设置" aria-label="设置">⚙</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="emptyState" class="state-view">
+        <div class="eyebrow">LOCAL-FIRST VIDEO LEARNING</div>
+        <h1>把播放时间<br>变成学习线索</h1>
+        <p id="emptyMessage">打开一个带字幕的 YouTube 视频，Notivue 会在这里整理逐字稿。</p>
+        <button id="retryBtn" class="primary-btn">读取当前视频</button>
+      </section>
+
+      <section id="loadingState" class="state-view hidden" aria-live="polite">
+        <div class="loader"><span></span><span></span><span></span></div>
+        <h2>正在整理字幕</h2>
+        <p id="loadingMessage">读取视频与官方字幕轨道…</p>
+      </section>
+
+      <section id="errorState" class="state-view hidden" role="alert">
+        <div class="status-code">!</div>
+        <h2>暂时无法读取</h2>
+        <p id="errorMessage"></p>
+        <button id="errorRetryBtn" class="primary-btn">重试</button>
+      </section>
+
+      <section id="workspace" class="workspace hidden">
+        <div class="video-header">
+          <div class="video-kicker"><span id="siteLabel">YOUTUBE</span><span id="durationLabel"></span></div>
+          <h1 id="videoTitle"></h1>
+          <p id="videoAuthor"></p>
+        </div>
+
+        <nav class="main-tabs" aria-label="内容">
+          <button class="main-tab active" data-tab="transcript">字幕</button>
+          <button class="main-tab" data-tab="overview">概览</button>
+          <button class="main-tab" data-tab="notes">笔记 <span id="noteCount">0</span></button>
+        </nav>
+
+        <section id="transcriptPanel" class="tab-panel">
+          <div class="control-row">
+            <div class="segmented" role="group" aria-label="字幕语言">
+              <button class="mode-btn active" data-mode="original">原文</button>
+              <button class="mode-btn" data-mode="translated">译文</button>
+              <button class="mode-btn" data-mode="bilingual">双语</button>
+            </div>
+            <button id="translateBtn" class="text-btn">翻译</button>
+          </div>
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="搜索字幕">
+            <small id="searchCount"></small>
+          </label>
+          <div id="transcriptList" class="transcript-list"></div>
+          <div id="selectionBar" class="selection-bar hidden">
+            <button id="explainBtn">解释</button>
+            <button id="selectionNoteBtn">记笔记</button>
+          </div>
+        </section>
+
+        <section id="overviewPanel" class="tab-panel hidden">
+          <div id="overviewEmpty" class="panel-empty">
+            <span class="index-number">01</span>
+            <h2>章节与金句</h2>
+            <button id="analyzeBtn" class="primary-btn">生成概览</button>
+          </div>
+          <div id="overviewContent" class="hidden">
+            <p id="summaryText" class="summary-text"></p>
+            <div class="section-heading"><span>CHAPTERS</span><h2>章节</h2></div>
+            <div id="chapterList"></div>
+            <div class="section-heading"><span>QUOTES</span><h2>金句</h2></div>
+            <div id="quoteList"></div>
+          </div>
+        </section>
+
+        <section id="notesPanel" class="tab-panel hidden">
+          <form id="noteForm" class="note-form">
+            <button id="noteTimeBtn" type="button" class="timestamp-btn">0:00</button>
+            <textarea id="noteInput" rows="3" placeholder="记下此刻的想法…"></textarea>
+            <button type="submit" class="primary-btn">保存笔记</button>
+          </form>
+          <div id="notesList" class="notes-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="explainDialog">
+      <form method="dialog" class="dialog-head">
+        <span>术语解释</span>
+        <button class="icon-btn" aria-label="关闭">×</button>
+      </form>
+      <div id="explainContent"></div>
+    </dialog>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+    <script type="module" src="src/sidepanel.js"></script>
+  </body>
+</html>
