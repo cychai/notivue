@@ -34,6 +34,10 @@
           <span lang="zh-CN">使用</span>
           <span lang="en">Workflow</span>
         </a>
+        <a href="#install">
+          <span lang="zh-CN">安装</span>
+          <span lang="en">Install</span>
+        </a>
       </nav>
 
       <div class="header-actions">
@@ -96,14 +100,14 @@
             <span lang="en">Turn video into knowledge<br>you can read, understand, and keep.</span>
           </p>
           <div class="hero-actions">
-            <a class="button button-light" href="https://github.com/cychai/notivue" target="_blank" rel="noreferrer">
-              <span lang="zh-CN">在 GitHub 查看</span>
-              <span lang="en">View on GitHub</span>
-              <span aria-hidden="true">↗</span>
+            <a class="button button-light" href="https://github.com/cychai/notivue/releases/download/v0.1.0/notivue-v0.1.0.zip">
+              <span lang="zh-CN">下载 v0.1.0</span>
+              <span lang="en">Download v0.1.0</span>
+              <span aria-hidden="true">↓</span>
             </a>
-            <a class="text-link" href="#features">
-              <span lang="zh-CN">了解 Notivue</span>
-              <span lang="en">Explore Notivue</span>
+            <a class="text-link" href="#install">
+              <span lang="zh-CN">查看安装说明</span>
+              <span lang="en">Installation guide</span>
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -319,17 +323,92 @@
         </ol>
       </section>
 
+      <section class="install-guide" id="install" aria-labelledby="install-title">
+        <div class="install-inner band">
+          <div class="section-label inverse">
+            <span>05</span>
+            <p>
+              <span lang="zh-CN">下载与安装</span>
+              <span lang="en">Download and install</span>
+            </p>
+          </div>
+          <div class="install-heading">
+            <h2 id="install-title">
+              <span lang="zh-CN">几分钟内，<br>开始整理下一段视频。</span>
+              <span lang="en">Start learning from your next video<br>in a few minutes.</span>
+            </h2>
+            <div class="release-download">
+              <span class="release-version">LATEST · v0.1.0</span>
+              <a class="button button-release" href="https://github.com/cychai/notivue/releases/download/v0.1.0/notivue-v0.1.0.zip">
+                <span lang="zh-CN">下载 Chrome 扩展</span>
+                <span lang="en">Download Chrome extension</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a class="release-link" href="https://github.com/cychai/notivue/releases/tag/v0.1.0" target="_blank" rel="noreferrer">
+                <span lang="zh-CN">查看发布说明</span>
+                <span lang="en">View release notes</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <ol class="install-steps">
+            <li>
+              <span class="install-number">01</span>
+              <div>
+                <h3><span lang="zh-CN">下载并解压</span><span lang="en">Download and unzip</span></h3>
+                <p><span lang="zh-CN">下载 <code>notivue-v0.1.0.zip</code>，解压到一个固定目录。安装后不要移动或删除该目录。</span><span lang="en">Download <code>notivue-v0.1.0.zip</code> and extract it to a permanent folder. Keep that folder in place after installation.</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="install-number">02</span>
+              <div>
+                <h3><span lang="zh-CN">加载扩展</span><span lang="en">Load the extension</span></h3>
+                <p><span lang="zh-CN">打开 <code>chrome://extensions</code>，开启“开发者模式”，点击“加载已解压的扩展程序”，选择刚才解压的目录。</span><span lang="en">Open <code>chrome://extensions</code>, enable Developer mode, choose “Load unpacked,” and select the extracted folder.</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="install-number">03</span>
+              <div>
+                <h3><span lang="zh-CN">连接你的 AI</span><span lang="en">Connect your AI</span></h3>
+                <p><span lang="zh-CN">在自动打开的设置页填写 API Base URL、模型和 API Key。密钥只保存在 Chrome 本地存储中。</span><span lang="en">Enter the API Base URL, model, and API key on the settings page. Your key stays in Chrome local storage.</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="install-number">04</span>
+              <div>
+                <h3><span lang="zh-CN">开始学习</span><span lang="en">Start learning</span></h3>
+                <p><span lang="zh-CN">打开一个带官方字幕的 YouTube 视频，点击工具栏中的 Notivue 图标。随后即可搜索字幕、生成概览、记录笔记并导出 Markdown。</span><span lang="en">Open a YouTube video with official captions and click the Notivue toolbar icon. You can then search, summarize, take notes, and export Markdown.</span></p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="install-notes">
+            <p><strong><span lang="zh-CN">环境要求</span><span lang="en">Requirements</span></strong><span lang="zh-CN">Chrome 116+ 或兼容的 Chromium 浏览器。</span><span lang="en">Chrome 116+ or a compatible Chromium browser.</span></p>
+            <p><strong><span lang="zh-CN">首版范围</span><span lang="en">Initial scope</span></strong><span lang="zh-CN">支持标准 YouTube 视频页；视频需要提供官方字幕。</span><span lang="en">Standard YouTube watch pages with official captions.</span></p>
+            <p><strong><span lang="zh-CN">隐私提示</span><span lang="en">Privacy note</span></strong><span lang="zh-CN">只有主动使用 AI 功能时，任务所需文本才会发送给所选模型服务。</span><span lang="en">Text is sent to your chosen provider only when you invoke an AI feature.</span></p>
+          </div>
+        </div>
+      </section>
+
       <section class="final-cta">
         <p class="eyebrow">OPEN SOURCE · MIT LICENSE</p>
         <h2>
           <span lang="zh-CN">让每一次观看，<br>都留下可继续使用的知识。</span>
           <span lang="en">Make every video leave behind<br>knowledge you can use.</span>
         </h2>
-        <a class="button button-dark" href="https://github.com/cychai/notivue" target="_blank" rel="noreferrer">
-          <span lang="zh-CN">前往 GitHub</span>
-          <span lang="en">Go to GitHub</span>
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="final-actions">
+          <a class="button button-dark" href="https://github.com/cychai/notivue/releases/download/v0.1.0/notivue-v0.1.0.zip">
+            <span lang="zh-CN">下载 v0.1.0</span>
+            <span lang="en">Download v0.1.0</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a class="text-link source-link" href="https://github.com/cychai/notivue" target="_blank" rel="noreferrer">
+            <span lang="zh-CN">查看源代码</span>
+            <span lang="en">View source</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
     </main>
 
