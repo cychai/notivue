@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Notivue",
-  "version": "0.1.10",
+  "version": "0.1.0",
   "minimum_chrome_version": "116",
   "description": "Turn videos into bilingual transcripts, chapters, explanations, and timestamped notes.",
   "permissions": ["sidePanel", "storage", "tabs", "downloads", "scripting"],
